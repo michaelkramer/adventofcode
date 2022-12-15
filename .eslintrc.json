@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "airbnb-typescript/base"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/no-useless-constructor": "warn",
+        "@typescript-eslint/no-empty-function": "warn",
+        "eqeqeq": [
+          "error",
+          "always"
+        ],
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "external",
+              [
+                "sibling",
+                "parent",
+                "internal"
+              ],
+              "builtin",
+              "unknown"
+            ],
+            "newlines-between": "ignore",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {}
+    }
+  ]
+}
